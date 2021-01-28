@@ -148,6 +148,7 @@ func (t *Git) fetch(dstPath string, tempArea ctlfetch.TempArea) error {
 		{"config", "credential.helper", "store --file " + gitCredsPath},
 		{"remote", "add", "origin", gitURL},
 		{"fetch", "origin"},
+		{"fetch", "origin", "--tags"},
 	}
 
 	err = t.runMultiple(argss, env, dstPath)
